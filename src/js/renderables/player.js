@@ -1,20 +1,20 @@
-import * as me from 'melonjs/dist/melonjs.module.js';
+import * as me from 'melonjs2/dist/melonjs.module.js';
 
  // Note : Jay Inheritance to be replaced with standard ES6 inheritance in melonjs 10+
-var PlayerEntity = me.Entity.extend({
+class PlayerEntity extends me.Entity {
 
     /**
      * constructor
      */
-    init:function (x, y, settings) {
+    init (x, y, settings) {
         // call the parent constructor
         this._super(me.Entity, 'init', [x, y , settings]);
-    },
+    }
 
     /**
      * update the entity
      */
-    update : function (dt) {
+    update  (dt) {
 
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
@@ -24,16 +24,16 @@ var PlayerEntity = me.Entity.extend({
 
         // return true if we moved or if the renderable was updated
         return (this._super(me.Entity, 'update', [dt]) || this.body.vel.x !== 0 || this.body.vel.y !== 0);
-    },
+    }
 
    /**
      * colision handler
      * (called when colliding with other objects)
      */
-    onCollision : function (response, other) {
+    onCollision  (response, other) {
         // Make all other objects solid
         return true;
     }
-});
+};
 
 export default PlayerEntity;

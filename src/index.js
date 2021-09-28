@@ -1,4 +1,4 @@
-import * as me from 'melonjs/dist/melonjs.module.js';
+import * as me from 'melonjs2/dist/melonjs.module.js';
 import 'index.css';
 
 import TitleScreen from 'js/stage/title.js';
