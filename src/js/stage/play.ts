@@ -1,4 +1,4 @@
-import * as me from 'melonjs2/dist/melonjs.module.js';
+import * as me from 'melonjs2/dist/melonjs.module';
 
 // Note : Jay Inheritance to be replaced with standard ES6 inheritance in melonjs 10+
 class PlayScreen extends me.Stage {

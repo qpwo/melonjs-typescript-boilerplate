@@ -1,11 +1,11 @@
 import * as me from 'melonjs2/dist/melonjs.module.js';
 import 'index.css';
 
-import TitleScreen from 'js/stage/title.js';
-import PlayScreen from 'js/stage/play.js';
-import PlayerEntity from 'js/renderables/player.js';
+import TitleScreen from './js/stage/title';
+import PlayScreen from './js/stage/play';
+import PlayerEntity from './js/renderables/player.js';
 
-import DataManifest from 'manifest.js';
+import {default as DataManifest} from './manifest.json';
 
 me.device.onReady(function () {
 

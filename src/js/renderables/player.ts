@@ -1,4 +1,4 @@
-import * as me from 'melonjs2/dist/melonjs.module.js';
+import * as me from 'melonjs2/dist/melonjs.module';
 
  // Note : Jay Inheritance to be replaced with standard ES6 inheritance in melonjs 10+
 class PlayerEntity extends me.Entity {
@@ -6,9 +6,9 @@ class PlayerEntity extends me.Entity {
     /**
      * constructor
      */
-    init (x, y, settings) {
+    constructor (x: number, y: number, settings: any) {
         // call the parent constructor
-        this._super(me.Entity, 'init', [x, y , settings]);
+        super(x, y , settings);
     }
 
     /**
@@ -30,7 +30,7 @@ class PlayerEntity extends me.Entity {
      * colision handler
      * (called when colliding with other objects)
      */
-    onCollision  (response, other) {
+    onCollision  (response: me.collision.ResponseObject, other: me.Entity): boolean {
         // Make all other objects solid
         return true;
     }

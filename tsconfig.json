@@ -5,6 +5,12 @@
         "module": "es6",
         "target": "es5",
         "allowJs": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        // "baseUrl": ".",
+        // "paths": {
+        //     "js/*": ["./js/*"]
+        //   }
+        "resolveJsonModule": true
+      
     }
 }
