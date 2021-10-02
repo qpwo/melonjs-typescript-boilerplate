@@ -1,36 +1,36 @@
-import * as me from 'melonjs2/dist/melonjs.module.js';
-import 'index.css';
+import 'index.css'
+import { audio, device, loader, pool, state, video } from 'melonjs/dist/melonjs.module.js'
+import PlayerEntity from './js/renderables/player.js'
+import PlayScreen from './js/stage/play'
+import TitleScreen from './js/stage/title'
+import DataManifest from './manifest'
 
-import TitleScreen from './js/stage/title';
-import PlayScreen from './js/stage/play';
-import PlayerEntity from './js/renderables/player.js';
 
-import {default as DataManifest} from './manifest.json';
 
-me.device.onReady(function () {
+device.onReady(function () {
 
     // initialize the display canvas once the device/browser is ready
-    if (!me.video.init(1218, 562, {parent : "screen", scale : "auto"})) {
-        alert("Your browser does not support HTML5 canvas.");
-        return;
+    if (!video.init(1218, 562, { parent: "screen", scale: "auto" })) {
+        alert("Your browser does not support HTML5 canvas.")
+        return
     }
 
     // Initialize the audio.
-    me.audio.init("mp3,ogg");
+    audio.init("mp3,ogg")
 
     // allow cross-origin for image/texture loading
-    me.loader.crossOrigin = "anonymous";
+    loader.crossOrigin = "anonymous"
 
     // set and load all resources.
-    me.loader.preload(DataManifest, function() {
+    loader.preload(DataManifest, function () {
         // set the user defined game stages
-        me.state.set(me.state.MENU, new TitleScreen());
-        me.state.set(me.state.PLAY, new PlayScreen());
+        state.set(state.MENU, new TitleScreen(8))
+        state.set(state.PLAY, new PlayScreen({}))
 
         // add our player entity in the entity pool
-        me.pool.register("mainPlayer", PlayerEntity);
+        pool.register("mainPlayer", PlayerEntity)
 
         // Start the game.
-        me.state.change(me.state.PLAY);
-    });
-});
+        state.change(state.PLAY, false)
+    })
+})

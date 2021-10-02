@@ -1,7 +1,7 @@
-import * as me from 'melonjs2/dist/melonjs.module';
+import { Stage } from 'melonjs/dist/melonjs.module'
 
 // Note : Jay Inheritance to be replaced with standard ES6 inheritance in melonjs 10+
-class TitleScreen extends me.Stage{
+class TitleScreen extends Stage {
     /**
      *  action to perform on state change
      */
@@ -17,4 +17,4 @@ class TitleScreen extends me.Stage{
     }
 }
 
-export default TitleScreen;
+export default TitleScreen
