@@ -24,7 +24,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "css-loader": "^6.3.0",
-    "melonJS2": "github:qpwo/melonjs",
+    "melonJS": "github:melonjs/melonJS",
     "style-loader": "^3.3.0"
   }
 }
